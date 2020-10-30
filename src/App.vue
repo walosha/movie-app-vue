@@ -1,28 +1,73 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <app-header> </app-header>
+    <div class="app">
+      <side-bar />
+      <div>
+        <app-title>
+          <h1 class="title">{{ title }}</h1>
+        </app-title>
+        <div class="main-content">
+          <movie-card v-for="item in 9" :key="item" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppHeader from "./components/AppHeader";
+import AppTitle from "./components/AppTitle";
+import MovieCard from "./components/MovieCard";
+import SideBar from "./components/SideBar";
 
 export default {
-  name: 'App',
+  props: {
+    title: {
+      type: String,
+      default: "Popular",
+    },
+  },
   components: {
-    HelloWorld
-  }
-}
+    AppHeader,
+    AppTitle,
+    MovieCard,
+    SideBar,
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.app {
+  display: grid;
+  grid-template-columns: 24rem 1fr;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+  user-select: none;
+}
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 25rem));
+  place-content: space-between space-evenly;
+  -webkit-box-align: start;
+  align-items: start;
+  padding: 4rem 0px;
+  gap: 4rem 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 200;
+  line-height: 1;
+  color: var(--color-primary-dark);
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
 }
 </style>

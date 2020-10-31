@@ -3,9 +3,9 @@ import App from "./App.vue";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
-// import { Plugin } from "vue-fragment";
+import { Plugin } from "vue-fragment";
 
-// Vue.use(Plugin);
+Vue.use(Plugin);
 
 // Install BootstrapVue
 Vue.use(BootstrapVue);

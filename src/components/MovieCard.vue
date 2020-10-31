@@ -2,22 +2,29 @@
   <div class="card">
     <div class="card-content">
       <div class="image-header">
-        <img class="image" :src="uri" :alt="ksjsjsj" />
+        <img class="image" :src="uri" alt="ksjsjsj" />
       </div>
       <div class="card-footer">
         <p class="movie-title">3032</p>
-        <div class="movie-rating">star</div>
+        <div class="movie-rating">
+          <star-rating :rating="3" :show-rating="false" :star-size="20" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import StarRating from "vue-star-rating";
+
 export default {
   data() {
     return {
       uri: require("../assets/logo.png"),
     };
+  },
+  components: {
+    StarRating,
   },
 };
 </script>

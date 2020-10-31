@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <fragment>
     <div class="header">
       <div class="logo">
         <svg
@@ -21,7 +21,7 @@
         </svg>
       </div>
     </div>
-  </div>
+  </fragment>
 </template>
 
 <script>

@@ -4,6 +4,7 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import { Plugin } from "vue-fragment";
+import router from "./route";
 
 Vue.use(Plugin);
 
@@ -13,6 +14,7 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
 new Vue({
+  router,
   el: "#app",
   render: (h) => h(App),
 });

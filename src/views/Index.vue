@@ -1,23 +1,17 @@
 <template>
-  <div>
-    <div class="app">
-      <side-bar />
-      <div>
-        <app-title>
-          <h1 class="title">{{ title }}</h1>
-        </app-title>
-        <div class="main-content">
-          <movie-card v-for="item in 9" :key="item" />
-        </div>
-      </div>
+  <fragemnet>
+    <app-title>
+      <h1 class="title">{{ title }}</h1>
+    </app-title>
+    <div class="movie-content">
+      <movie-card v-for="item in 9" :key="item" />
     </div>
-  </div>
+  </fragemnet>
 </template>
 
 <script>
 import AppTitle from "../components/AppTitle";
 import MovieCard from "../components/MovieCard";
-import SideBar from "../components/SideBar";
 
 export default {
   props: {
@@ -29,26 +23,12 @@ export default {
   components: {
     AppTitle,
     MovieCard,
-    SideBar,
   },
 };
 </script>
 
 <style scoped>
-.app {
-  display: grid;
-  grid-template-columns: 24rem 1fr;
-}
-.container {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  align-items: flex-start;
-  height: 100%;
-  width: 100%;
-  user-select: none;
-}
-.main-content {
+.movie-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 25rem));
   place-content: space-between space-evenly;
@@ -57,7 +37,6 @@ export default {
   padding: 4rem 0px;
   gap: 4rem 2rem;
 }
-
 .title {
   font-size: 2.5rem;
   font-weight: 200;

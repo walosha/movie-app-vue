@@ -1,9 +1,7 @@
 <template>
-  <div class="container">
-    <div class="header-title">
-      <slot></slot>
-      <p class="header-title_sub">MOVIES</p>
-    </div>
+  <div class="ttiltcontainer">
+    <h2 class="header-title">{{ title }}</h2>
+    <p class="header-title_sub">MOVIES</p>
   </div>
 </template>
 
@@ -12,6 +10,7 @@ export default {
   data() {
     return {};
   },
+  props: ["title"],
 };
 </script>
 

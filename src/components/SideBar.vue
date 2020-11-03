@@ -1,5 +1,5 @@
 <template>
-  <div class=" sidebar">
+  <div class="sidebar">
     <app-btn v-for="item in 15" :key="item" />
   </div>
 </template>
@@ -19,8 +19,8 @@ export default {
 <style scoped>
 .sidebar {
   padding: 1rem;
-  border-right: 1px solid #37474f;
-  display: "flex";
+  border-right: 1px solid #e7ebec;
+  display: flex;
   flex-direction: column;
 }
 </style>
